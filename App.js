@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
-import Icon from 'react-native-vector-icons/Octicons';
+import Icon from "react-native-vector-icons/Octicons";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -16,48 +16,49 @@ import {
 
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        onPress={() => navigation.toggleDrawer() }
-        title="Menu"
-      />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Button onPress={() => navigation.toggleDrawer()} title="Menu" />
+    </SafeAreaView>
   );
 }
 function NotificationsScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      
+    <SafeAreaView style={styles.menu}>
       <Button onPress={() => navigation.goBack()} title="Go Back Home" />
-      <Button onPress={navigation.toggleDrawer() } title="hey"/>
-    </View>
+      <Button onPress={navigation.toggleDrawer()} title="hey" />
+    </SafeAreaView>
   );
 }
-
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-   
-      <NavigationContainer style={styles.container}>
-        <Drawer.Navigator initialRouteName="Home">
-        
+    <NavigationContainer style={styles.container}>
+      <Drawer.Navigator initialRouteName="Home">
+
         <Drawer.Screen name="Rutinas" component={HomeScreen} />
         <Drawer.Screen name="Alimetacion" component={NotificationsScreen} />
-        </Drawer.Navigator>
-       
-      </NavigationContainer>
-       
-     
-  
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "antiquewhite",
-    alignItems: "left",
-    justifyContent: "left",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    left: 0,
+    right: 350,
+    top: 30,
+    // bottom: 0,
+  },
+  menu: {
+    flex: 1,
+    backgroundColor: "antiquewhite",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 50,
   },
 });
