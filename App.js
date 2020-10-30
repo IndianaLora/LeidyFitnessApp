@@ -17,7 +17,19 @@ import {
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Button onPress={() => navigation.toggleDrawer()} title="Menu" />
+      <View>
+        <Text style={styles.text} type="static">
+       Leidy Fitness
+        </Text>
+        <Image
+          style={styles.image}
+          source={{
+
+            uri:
+              "https://image.freepik.com/vector-gratis/dibujos-animados-fitness-salud_24640-25738.jpg",
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 }
@@ -34,8 +46,7 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer style={styles.container}>
-      <Drawer.Navigator initialRouteName="Home">
-
+      <Drawer.Navigator initialRouteName="Home" style={styles.navigator} >
         <Drawer.Screen name="Rutinas" component={HomeScreen} />
         <Drawer.Screen name="Alimetacion" component={NotificationsScreen} />
       </Drawer.Navigator>
@@ -46,13 +57,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "antiquewhite",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
-    left: 0,
-    right: 350,
-    top: 30,
-    // bottom: 0,
+    marginTop: 30,
   },
   menu: {
     flex: 1,
@@ -61,4 +66,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 50,
   },
+  text: {
+    textAlign: "center",
+    color: "white",
+    backgroundColor: "rosybrown",
+    height: 50,
+    fontSize: 30,
+  },
+  vieX: {
+    backgroundColor: "blue",
+  },
+  image:{
+    alignItems: "center",
+    marginLeft:100,
+    marginTop:200,
+    width: 200,
+     height: 300
+  },
+  navigator:{
+    backgroundColor:'#e9967a'
+  }
 });
