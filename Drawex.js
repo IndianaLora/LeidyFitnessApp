@@ -1,37 +1,34 @@
 import React from "react";
-import Alimentacion from "./Alimentacion"
-import HomeScreen from "./HomeScreen"
-
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import Alimentacion from "./Alimentacion";
+import HomeScreen from "./HomeScreen";
+import { createDrawerNavigator, DrawerItem } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
-import Icon from "react-native-vector-icons/Octicons";
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  Alert,
-  Button,
-  prompt,
-} from "react-native";
+import { StyleSheet } from "react-native";
 
 const Drawer = createDrawerNavigator();
 
-function  Drawex() {
+function Drawex() {
   return (
-
     <NavigationContainer style={styles.container}>
-      
-      <Drawer.Navigator initialRouteName="Home" style={styles.navigator}>
+
+      <Drawer.Navigator
+        initialRouteName="Home"
+        name="Home"
+        drawerStyle={{
+          backgroundColor: "#faebd7",
+          width: 240,
+        }}
+        drawerContentOptions={{
+          activeTintColor: '#4682b4',
+          itemStyle: { marginVertical: 2 },
+        }}
+      >
         <Drawer.Screen name="Rutinas" component={HomeScreen} />
         <Drawer.Screen name="Alimetacion" component={Alimentacion} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -67,4 +64,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#e9967a",
   },
 });
-export default Drawex
+export default Drawex;
