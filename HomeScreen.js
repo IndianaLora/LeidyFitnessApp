@@ -1,8 +1,7 @@
 import React from "react";
-
 import { Entypo } from "@expo/vector-icons";
 import { Card } from "react-native-elements";
-import { StyleSheet, Text, View, SafeAreaView,Component } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, } from "react-native";
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>

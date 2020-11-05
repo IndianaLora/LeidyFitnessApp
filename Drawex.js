@@ -1,32 +1,34 @@
 import React from "react";
 import Alimentacion from "./Alimentacion";
+import Rutinas from "./Rutinas";
 import HomeScreen from "./HomeScreen";
-import { createDrawerNavigator, DrawerItem } from "@react-navigation/drawer";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
-import { StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+
 
 const Drawer = createDrawerNavigator();
-
 function Drawex() {
   return (
+    
     <NavigationContainer style={styles.container}>
-
       <Drawer.Navigator
         initialRouteName="Home"
-        name="Home"
         drawerStyle={{
           backgroundColor: "#faebd7",
           width: 240,
         }}
         drawerContentOptions={{
-          activeTintColor: '#4682b4',
+          activeTintColor: "#4682b4",
           itemStyle: { marginVertical: 2 },
         }}
+        drawerType="static"
       >
         <Drawer.Screen name="Rutinas" component={HomeScreen} />
         <Drawer.Screen name="Alimetacion" component={Alimentacion} />
       </Drawer.Navigator>
     </NavigationContainer>
+   
   );
 }
 
