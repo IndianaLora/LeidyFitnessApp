@@ -1,19 +1,26 @@
 import React from "react";
 import { Entypo } from "@expo/vector-icons";
 import { Card } from "react-native-elements";
-import { StyleSheet, Text, View, SafeAreaView, } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View
-      
         style={{
           //   marginTop:Constant.statusBarHeight,
           backgroundColor: "#4682b4",
           flexDirection: "row",
         }}
       >
-        <Entypo name="menu" size={50} color="black" style={styles.icon} onPress={()=>{navigation.openDrawer()}} />
+        <Entypo
+          name="menu"
+          size={50}
+          color="black"
+          style={styles.icon}
+          onPress={() => {
+            navigation.openDrawer();
+          }}
+        />
         <Text style={styles.text}>Leidy Fitness</Text>
       </View>
       <View style={styles.card}>
@@ -39,7 +46,6 @@ function HomeScreen({ navigation }) {
             style={{ width: 200, height: 200, borderRadius: 20 }}
           ></Card.Image>
         </Card>
-        
       </View>
     </SafeAreaView>
   );

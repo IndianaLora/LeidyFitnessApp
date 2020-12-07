@@ -8,13 +8,6 @@ import Icon from "react-native-vector-icons/Octicons";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  Alert,
-  Button,
-  prompt,
 } from "react-native";
 
 const Drawer = createDrawerNavigator();

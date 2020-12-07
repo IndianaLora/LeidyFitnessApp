@@ -6,11 +6,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaView, StyleSheet } from "react-native";
 
-
 const Drawer = createDrawerNavigator();
 function Drawex() {
   return (
-    
     <NavigationContainer style={styles.container}>
       <Drawer.Navigator
         initialRouteName="Home"
@@ -24,11 +22,11 @@ function Drawex() {
         }}
         drawerType="static"
       >
-        <Drawer.Screen name="Rutinas" component={HomeScreen} />
+        <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Alimetacion" component={Alimentacion} />
+        <Drawer.Screen name="Rutinas" component={HomeScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
-   
   );
 }
 
